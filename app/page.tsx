@@ -1,95 +1,55 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+import Experience from "@src/components/experience/Experience";
+import FireWorks from "@src/components/fireWorks/FireWorks";
+import Header from "@src/components/header/Header";
+import Projects from "@src/components/projects/Projects";
+import Skills from "@src/components/skills/Skills";
+import TopNavBar from "@src/components/top-navbar/TopNavBar";
+import React, { useState, useRef } from "react";
+import dynamic from "next/dynamic";
 
-export default function Home() {
+const DynamicAnimatedBackground = dynamic(
+  () => import("../src/components/animated_bckground/AnimatedBackground"),
+  {
+    loading: () => <p>Loading...</p>,
+  }
+);
+
+const Home = () => {
+  const [selected, setSelected] = useState<string>("Home");
+
+  const aboutRef = useRef(null);
+  const skillsRef = useRef(null);
+  const projectsRef = useRef(null);
+  // const experienceRef = useRef(null);
+
+  const sectionRefs = {
+    About: aboutRef,
+    Skills: skillsRef,
+    Projects: projectsRef,
+    // Experience: experienceRef,
+  };
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <React.Fragment>
+      <div className="home_top_container">
+        <DynamicAnimatedBackground />
+        <div className="home_top">
+          <TopNavBar setSelected={setSelected} sectionRefs={sectionRefs} />
+          <Header />
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="home">
+        <Skills />
+        <Experience />
+        <Projects />
+        {/* {showSection()} */}
+        {/* {selected === "Home" && <FireWorks />} */}
       </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+      {/* </div> */}
+    </React.Fragment>
+  );
+};
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+export default Home;

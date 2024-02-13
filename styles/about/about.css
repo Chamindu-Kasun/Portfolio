@@ -1,0 +1,63 @@
+.about__section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.about__section-title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about__section-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about__section-aboutMe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* gap: 5%; */
+  width: 50%;
+}
+
+.about__section-aboutMe-paragraph {
+  color: gray;
+  font-style: italic;
+}
+
+.about__section-technologies {
+  width: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tech-image {
+  width: 90px;
+  height: 90px;
+  padding: 1rem;
+}
+
+.about__title-text {
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  color: #030303;
+  text-transform: capitalize;
+}
+
+.about__title-text span {
+  color: #313bac;
+}

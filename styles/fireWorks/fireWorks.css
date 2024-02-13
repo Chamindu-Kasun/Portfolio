@@ -1,0 +1,40 @@
+.fireworks-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  left: 0;
+  max-width: 100%;
+  height: 100vh;
+  z-index: 9999;
+  pointer-events: none;
+  overflow: hidden !important;
+}
+
+.firework {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  animation: fireworks 2s infinite;
+  overflow: hidden;
+}
+
+@keyframes fireworks {
+  0% {
+    transform: translate(0, 0) scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(5, 0) scale(0.5);
+    opacity: 0;
+  }
+}

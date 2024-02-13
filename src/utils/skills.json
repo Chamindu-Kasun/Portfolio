@@ -1,0 +1,59 @@
+[
+    {
+        "title":"Frontend",
+        "icon":"https://storage.googleapis.com/portfolio_ck/skills_logo/front_end.png",
+        "skills":[
+            {"skill":"HTML", "presentage":90},
+            {"skill":"CSS", "presentage":90},
+            {"skill":"MUI/Bootstrap/Tailwind", "presentage":80},
+            {"skill":"JavaScript", "presentage":85},
+            {"skill":"TypeScript", "presentage":80},
+            {"skill":"React", "presentage":90},
+            {"skill":"React-Native", "presentage":85},
+            {"skill":"Redux", "presentage":75},
+            {"skill":"Next", "presentage":85},
+            {"skill":"Three.js", "presentage":60},
+            {"skill":"Figma", "presentage":50}
+        ]
+    },
+    {
+        "title":"Backend",
+        "icon":"https://storage.googleapis.com/portfolio_ck/skills_logo/back_end.png",
+        "skills":[
+            {"skill":"Node.js", "presentage":90},
+            {"skill":"Express.js", "presentage":85},
+            {"skill":"Solidity", "presentage":60},
+            {"skill":"Go", "presentage":50},
+            {"skill":"Java", "presentage":55},
+            {"skill":"SQL(MySQL,Cloud SQL,SQL Lite)", "presentage":85},
+            {"skill":"NoSQL(MongoDB,Redis)", "presentage":70},
+            {"skill":"GraphQL", "presentage":50},
+            {"skill":"REST API", "presentage":85},
+            {"skill":"SOAP", "presentage":40},
+            {"skill":"Microservices", "presentage":50},
+            {"skill":"Websockets", "presentage":60},
+            {"skill":"SmartContract Development(Blockchain)", "presentage":67}
+        ]
+    },
+    {
+        "title":"Tools",
+        "icon":"https://storage.googleapis.com/portfolio_ck/skills_logo/tools.png",
+        "skills":[
+            {"skill":"Git & Github", "presentage":85},
+            {"skill":"GCP", "presentage":80},
+            {"skill":"Docker", "presentage":60},
+            {"skill":"CI/CD", "presentage":60},
+            {"skill":"Jira", "presentage":80}
+        ]
+    },
+    {
+        "title":"Soft Skills",
+        "icon":"https://storage.googleapis.com/portfolio_ck/skills_logo/soft_skills.png",
+        "skills":[
+            {"skill":"Problem solving", "presentage":80},
+            {"skill":"Communication", "presentage":90},
+            {"skill":"Collaboration", "presentage":90},
+            {"skill":"Experience working in agile teams", "presentage":95}
+        ]
+    }
+]

@@ -1,0 +1,136 @@
+.projects {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 3rem 2rem;
+  background: rgba(184, 180, 180, 0.25);
+  position: relative;
+}
+
+.projects .projects__title {
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  color: #030303;
+  text-transform: capitalize;
+}
+
+.projects .projects__title span {
+  color: #313bac;
+}
+
+.projects .projects__container {
+  width: 100%;
+  height: 100%;
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+
+.projects .projects__container .project__card {
+  width: 200px;
+  height: 250px;
+  background-color: #f8f8f8;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  padding: 0.5rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.projects .projects__container .project__opened-card {
+  background: transparent;
+  width: 265px;
+  height: 300px;
+}
+
+.projects .projects__opened-project-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: black;
+  opacity: 0.3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projects .projects__opened-project {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.projects .projects__opened-project .box {
+  background-color: #f8f8f8;
+  padding: 2rem 3rem;
+  height: auto;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.projects .projects__opened-project .box button {
+  cursor: pointer;
+  border: none;
+  padding: 0.5rem;
+  align-self: flex-end;
+}
+
+.projects .projects__opened-project .box .projects__opened-description {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 30px;
+}
+
+.projects
+  .projects__opened-project
+  .projects__opened-description
+  .description-text {
+  flex: 2;
+  width: 100%;
+  height: 100%;
+  color: gray;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+.projects
+  .projects__opened-project
+  .box
+  .projects__opened-description
+  .projects__opened-image-container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  cursor: pointer;
+}
+
+.projects
+  .projects__opened-project
+  .box
+  .projects__opened-description
+  .projects__opened-image-container
+  .project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
