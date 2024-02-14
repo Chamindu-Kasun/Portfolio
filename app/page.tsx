@@ -7,6 +7,8 @@ import Skills from "@src/components/skills/Skills";
 import TopNavBar from "@src/components/top-navbar/TopNavBar";
 import React, { useState, useRef } from "react";
 import dynamic from "next/dynamic";
+import Education from "@src/components/education/Education";
+import Contact from "@src/components/contact/Contact";
 
 const DynamicAnimatedBackground = dynamic(
   () => import("../src/components/animated_bckground/AnimatedBackground"),
@@ -42,7 +44,9 @@ const Home = () => {
       <div className="home">
         <Skills />
         <Experience />
+        <Education />
         <Projects />
+        <Contact />
         {/* {showSection()} */}
         {/* {selected === "Home" && <FireWorks />} */}
       </div>

@@ -24,6 +24,7 @@ const WorkExperiance: React.FC<WorkExperianceProps> = (props) => {
           index={index}
           handleOpen={handleOpen}
           setExperience={setExperience}
+          length={WorkExperience.length}
         />
       ))}
     </div>

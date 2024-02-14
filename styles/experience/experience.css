@@ -65,15 +65,103 @@
   border-radius: 50%;
 }
 
+.timeline__point-bottom {
+  top: initial;
+  bottom: 0;
+}
+
 .timeline__component--bg {
   padding: 1.5em;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(22, 17, 47, 0.398);
+  backdrop-filter: blur(1rem);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid #6751b9;
   border-radius: 10px;
+}
+
+.timeline__component--bg h2 {
+  display: inline-block;
+  background: rgba(103, 81, 185, 0.5);
+  border-radius: 0.3rem;
+  font-size: 1rem !important;
+  font-weight: 400;
+  padding: 0.4rem 0.6rem;
+}
+
+.timeline__component--bg h3 {
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.timeline__component--bg p {
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+
+.timeline__component--bg button {
+  font-size: 0.7rem;
+  font-weight: 400;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  background: linear-gradient(180deg, #aa94fe 0%, #7c5fe6 100%);
+  border: none;
+  border-radius: 0.3rem;
 }
 
 .modal_container_experience {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #130f2a;
+  border-radius: 0.65rem;
+  border: 1px solid #6751b9 !important;
+  padding: 1.5rem;
+}
+
+.modal_container_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.modal_container_title h2 {
+  font-size: 1.05rem;
+  font-weight: 400;
+}
+
+.modal_container_description {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.modal_container_date {
+  display: inline-block;
+  background: rgba(103, 81, 185, 0.5);
+  border-radius: 0.3rem;
+  font-size: 0.7rem !important;
+  font-weight: 400;
+  padding: 0.4rem 0.6rem;
+  margin-bottom: 1.3rem;
+}
+
+.modal_container_description_experiance li {
+  list-style: none;
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.modal_container_description_experiance li::after {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #6751b9;
+  position: absolute;
+  left: -1.3rem;
+  top: 0.35rem;
 }

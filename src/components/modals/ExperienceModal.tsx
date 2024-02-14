@@ -3,6 +3,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { useState } from "react";
+import CloseIcon from "@mui/icons-material/Close";
 
 const style = {
   position: "absolute" as "absolute",
@@ -40,26 +41,31 @@ const ExperienceModal: React.FC<ExperienceModalProps> = (props) => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style} className="modal_container_experience">
-          <Button onClick={handleClose}>Close modal</Button>
-          <Box>
+          <Box className="modal_container_title">
             <Typography id="modal-modal-title" variant="h6" component="h2">
-              {experience?.title}
+              {experience?.title} at {experience?.company}
             </Typography>
-            <Typography id="modal-modal-title" variant="h6" component="h2">
-              {experience?.company}
-            </Typography>
-            <Typography id="modal-modal-title" variant="h6" component="h2">
-              {experience?.date}
-            </Typography>
-            {/* {experience?.responsibilities.map((responsibility, index) => (
-            <Typography id="modal-modal-description" sx={{ mt: 2 }} key={index}>
-              {responsibility}
-            </Typography>
-          ))} */}
+            <Button onClick={handleClose}>
+              <CloseIcon />
+            </Button>
+          </Box>
+          <Box className="modal_container_description">
+            <Box>
+              <Typography
+                className="modal_container_date"
+                id="modal-modal-title"
+              >
+                {experience?.date}
+              </Typography>
+            </Box>
+            <ul className="modal_container_description_experiance">
+              {experience?.responsibilities.map((responsibility, index) => (
+                <li key={index}>{responsibility}</li>
+              ))}
+            </ul>
           </Box>
         </Box>
       </Modal>
-      1
     </div>
   );
 };

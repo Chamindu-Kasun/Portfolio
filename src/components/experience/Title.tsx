@@ -1,9 +1,7 @@
 const Title: React.FC = () => {
   return (
     <div className="experience__section-title">
-      <h2 className="experience__title-text">
-        Experience <span>&</span> Education
-      </h2>
+      <h2 className="experience__title-text">Experience</h2>
     </div>
   );
 };
