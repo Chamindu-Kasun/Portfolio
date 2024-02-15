@@ -27,3 +27,5 @@ body {
 @import "./projects/projects.css";
 @import "./experience/experience.css";
 @import "./education/education.css";
+@import "./contact/contact.css";
+@import "./footer/footer.css";

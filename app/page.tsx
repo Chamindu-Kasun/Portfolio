@@ -9,6 +9,7 @@ import React, { useState, useRef } from "react";
 import dynamic from "next/dynamic";
 import Education from "@src/components/education/Education";
 import Contact from "@src/components/contact/Contact";
+import Footer from "@src/components/footer/Footer";
 
 const DynamicAnimatedBackground = dynamic(
   () => import("../src/components/animated_bckground/AnimatedBackground"),
@@ -47,6 +48,7 @@ const Home = () => {
         <Education />
         <Projects />
         <Contact />
+        <Footer />
         {/* {showSection()} */}
         {/* {selected === "Home" && <FireWorks />} */}
       </div>

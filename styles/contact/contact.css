@@ -1,0 +1,112 @@
+.contact__section {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  background-color: transparent;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.contact__section-title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact__title-text {
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.contact__content {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+}
+
+.contact__content div {
+  flex: 1;
+}
+
+.contact__content_contactInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.contact_details_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #130f2a;
+  border-radius: 0.65rem;
+  border: 1px solid #6751b9;
+  padding: 1.5rem;
+}
+
+.contact_details_card_icon {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  background: #3d3072;
+  margin-bottom: 0.8rem;
+}
+
+.contact_details_card p {
+  font-size: 0.6rem;
+  font-weight: 400;
+}
+
+.contact-form-content {
+  width: 100%;
+}
+
+.contact-form-content form {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 1.5rem;
+}
+
+.name-container {
+  display: flex;
+  align-items: center;
+  grid-gap: 1.5rem;
+}
+
+.contact-form-content form input,
+.contact-form-content form textarea {
+  flex: 1;
+  /* width: 100%; */
+  font-size: 0.9rem;
+  color: #fff;
+  background: #130f2a;
+  border-radius: 0.6rem;
+  border: 1px solid #6751b9;
+  padding: 1rem;
+}
+
+.contact-form-content form button {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  border: 1px solid #a892fe;
+  border-radius: 0.6rem;
+  background: linear-gradient(90deg, #a892fe 0%, #8064e8 100%);
+  padding: 0.7rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.contact-form-content form button:hover {
+  color: #a892fe;
+  background: transparent;
+}
