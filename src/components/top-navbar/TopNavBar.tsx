@@ -1,7 +1,7 @@
 "use client";
-import React from "react";
-import Image from "next/image";
-import Logo from "../../../public/assets/logo2.png";
+import React, { useState, useEffect } from "react";
+import MobileNavBar from "./MobileNavBar";
+import DesktopNavBar from "./DesktopNavBar";
 
 type TopNavBarProps = {
   setSelected: (selection: string) => void;
@@ -13,27 +13,20 @@ type TopNavBarProps = {
 const TopNavBar: React.FC<TopNavBarProps> = (props) => {
   const sections = ["Home", "Skills", "Experience", "Projects", "Contact"];
   const { setSelected, sectionRefs } = props;
+  const [openMenu, setOpenMenu] = useState<boolean>(false);
+
+  const toggleMenu = () => setOpenMenu(!openMenu);
 
   const handleSelection = (section: string) => {
     setSelected(section);
-    // const selectedRef = sectionRefs[section];
-
-    // if (selectedRef && selectedRef.current) {
-    //   selectedRef.current.scrollIntoView({
-    //     behavior: "smooth",
-    //     block: "start",
-    //   });
-    // }
 
     const selectedRef = sectionRefs[section];
     if (selectedRef && selectedRef.current) {
       const element = selectedRef.current;
 
-      // Calculate the offset relative to the document's top
       const offsetTop =
         element.getBoundingClientRect().top + window.pageYOffset;
 
-      // Smooth scroll to the target section
       window.scrollTo({
         top: offsetTop,
         behavior: "smooth",
@@ -42,23 +35,20 @@ const TopNavBar: React.FC<TopNavBarProps> = (props) => {
   };
 
   return (
-    <nav className="app__navbar">
-      <div className="app__navbar-list">
-        <Image src={Logo} width={300} height={100} alt="Logo" />
-        <ul>
-          {sections.map((section, index) => (
-            <li key={index}>
-              <a
-                className={`app__navbar-item`}
-                onClick={() => handleSelection(section)}
-              >
-                {section}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </nav>
+    <>
+      <MobileNavBar
+        isOpen={openMenu}
+        toggleMenu={toggleMenu}
+        sections={sections}
+        handleSelection={handleSelection}
+      />
+      <DesktopNavBar
+        sections={sections}
+        handleSelection={handleSelection}
+        toggleMenu={toggleMenu}
+        openMenu={openMenu}
+      />
+    </>
   );
 };
 

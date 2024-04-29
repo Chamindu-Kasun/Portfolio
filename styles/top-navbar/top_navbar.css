@@ -1,17 +1,17 @@
 .app__navbar {
-  /* background: rgba(0, 0, 0, 0.1); */
+  background: rgba(0, 0, 0, 0.1);
   padding: 0.5rem 0;
   position: sticky;
   top: 0;
   z-index: 30;
   backdrop-filter: blur(5px);
+  width: 90%;
 }
 
 .app__navbar-list {
-  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 1rem 0;
   margin: 0 auto;
 }
@@ -60,8 +60,20 @@
   color: #a993fe;
 }
 
-/* @media (max-width: 900px) {
-  .app__navbar-list {
+.app__navbar-menu-icon {
+  display: none;
+}
+
+@media (max-width: 769px) {
+  .app__navbar-list ul {
     display: none;
   }
-} */
+
+  .app__navbar-menu-icon {
+    display: block;
+  }
+
+  .app__navbar-list {
+    width: auto;
+  }
+}

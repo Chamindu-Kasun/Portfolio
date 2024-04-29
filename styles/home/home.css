@@ -19,6 +19,12 @@
   backdrop-filter: blur(5px);
 }
 
+@media (max-width: 769px) {
+  .home {
+    display: none;
+  }
+}
+
 .home_animation {
   position: absolute;
   top: 0;

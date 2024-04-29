@@ -14,12 +14,13 @@ body {
   font-family: "Roboto", sans-serif;
   color: #fff;
   background-color: #060417;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   /* overflow-y: hidden; */
   /* max-height: 100vh; */
 }
 @import "./home/home.css";
 @import "./top-navbar/top_navbar.css";
+@import "./top-navbar/mobile_navbar.css";
 @import "./header/header.css";
 @import "./fireWorks/fireWorks.css";
 @import "./about/about.css";

@@ -42,6 +42,7 @@ const Home = () => {
           <Header />
         </div>
       </div>
+
       <div className="home">
         <Skills />
         <Experience />
