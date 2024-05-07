@@ -8,6 +8,12 @@
   padding: 2.5rem 2rem;
 }
 
+@media (max-width: 769px) {
+  .header__section {
+    flex-direction: column;
+  }
+}
+
 .header__section_content {
   position: relative;
   z-index: 1;
@@ -22,6 +28,12 @@
   margin-bottom: 1rem;
 }
 
+@media (max-width: 769px) {
+  .header__section_content h2 {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+}
 .header__section_content p {
   width: 80%;
   font-size: 1rem;
@@ -45,6 +57,12 @@
   border-radius: 10%;
 }
 
+@media (max-width: 769px) {
+  .header__section-image {
+    position: relative;
+    justify-content: center;
+  }
+}
 @keyframes rotateY {
   0% {
     transform: rotateY(-30deg);

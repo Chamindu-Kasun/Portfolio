@@ -51,9 +51,10 @@
 
 .skills {
   width: 100%;
-  display: grid;
-  grid-gap: 3rem;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .skills_info {
@@ -70,6 +71,15 @@
   position: relative;
   cursor: pointer;
   transition: all 0.3s ease;
+  width: 100px;
+}
+
+@media (max-width: 769px) {
+  .skills_card {
+    width: 50px;
+    height: 20px;
+    margin-top: 40px;
+  }
 }
 
 .skills_card:hover,
@@ -126,6 +136,13 @@
   margin: 1rem;
   backdrop-filter: blur(1rem);
 }
+
+@media (max-width: 700px) {
+  .skills_info_skill {
+    width: 80%;
+  }
+}
+
 .skill-info-values {
   display: flex;
   align-items: center;
