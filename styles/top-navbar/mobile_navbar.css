@@ -3,7 +3,6 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.3);
-  position: fixed;
   left: 0;
   top: 0;
   z-index: 999;
@@ -16,6 +15,7 @@
 @media (max-width: 769px) {
   .mobile_menu {
     display: block;
+    position: fixed;
   }
 }
 
@@ -36,5 +36,5 @@
   flex-direction: column;
   gap: 2rem;
   list-style: none;
-  margin-left: -2rem;
+  /* margin-left: -2rem; */
 }

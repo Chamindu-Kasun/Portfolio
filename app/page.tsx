@@ -35,10 +35,11 @@ const Home = () => {
 
   return (
     <React.Fragment>
+      <TopNavBar setSelected={setSelected} sectionRefs={sectionRefs} />
       <div className="home_top_container">
         <DynamicAnimatedBackground />
         <div className="home_top">
-          <TopNavBar setSelected={setSelected} sectionRefs={sectionRefs} />
+          
           <Header />
         </div>
       </div>
