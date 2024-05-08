@@ -6,7 +6,7 @@ const ResumeButton: React.FC = () => {
     );
   };
   return (
-    <div>
+    <div className="resume_button_container">
       <button className="resume_button" onClick={openPDF}>
         MY RESUME
       </button>

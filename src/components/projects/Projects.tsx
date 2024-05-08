@@ -71,12 +71,6 @@ const Projects: React.FC = () => {
         </div>
         <div className="projects__container">
           {MyProjects.map((project, index) => (
-            // <Project
-            //   key={index}
-            //   selectedId={selectedId}
-            //   selectedProject={project}
-            //   setSelectedId={setSelectedId}
-            // />
             <ProjectCard
               key={index}
               project={project}

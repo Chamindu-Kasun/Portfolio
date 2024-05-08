@@ -34,12 +34,26 @@
     text-align: center;
   }
 }
+
+@media (max-width: 700px) {
+  .header__section_content h2 {
+    font-size: 3.2rem;
+    text-align: center;
+  }
+}
+
 .header__section_content p {
   width: 80%;
   font-size: 1rem;
   font-weight: 400;
   line-height: 2rem;
   color: gray;
+}
+
+@media (max-width: 700px) {
+  .header__section_content p {
+    text-align: center;
+  }
 }
 
 .header__section-image {
@@ -74,6 +88,14 @@
 
 .rotate-animation {
   animation: rotateY 4s infinite ease-in-out;
+}
+
+@media (max-width: 700px) {
+  .resume_button_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .resume_button {
