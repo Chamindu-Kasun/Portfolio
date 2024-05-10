@@ -21,41 +21,41 @@ const DynamicAnimatedBackground = dynamic(
 const Home = () => {
   const [selected, setSelected] = useState<string>("Home");
 
-  const aboutRef = useRef(null);
-  const skillsRef = useRef(null);
-  const projectsRef = useRef(null);
-  // const experienceRef = useRef(null);
+  const homeRef = useRef<HTMLDivElement>(null);
+  const skillsRef = useRef<HTMLDivElement>(null);
+  const experienceRef = useRef<HTMLDivElement>(null);
+  const educationRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
 
   const sectionRefs = {
-    About: aboutRef,
+    Home: homeRef,
     Skills: skillsRef,
+    Experience: experienceRef,
+    Education: educationRef,
     Projects: projectsRef,
-    // Experience: experienceRef,
+    Contact: contactRef,
   };
 
   return (
     <React.Fragment>
       <TopNavBar setSelected={setSelected} sectionRefs={sectionRefs} />
-      <div className="home_top_container">
+      <div className="home_top_container" ref={homeRef}>
         <DynamicAnimatedBackground />
         <div className="home_top">
-          
           <Header />
         </div>
       </div>
 
       <div className="home">
-        <Skills />
-        <Experience />
-        <Education />
-        <Projects />
-        <Contact />
+        <Skills ref={skillsRef} />
+        <Experience ref={experienceRef} />
+        <Education ref={educationRef} />
+        <Projects ref={projectsRef} />
+        <Contact ref={contactRef} />
         <Footer />
-        {/* {showSection()} */}
-        {/* {selected === "Home" && <FireWorks />} */}
       </div>
-
-      {/* </div> */}
+      {/* <FireWorks /> */}
     </React.Fragment>
   );
 };

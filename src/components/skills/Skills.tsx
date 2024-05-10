@@ -1,6 +1,7 @@
 import SkillTypes from "./SkillTypes";
 import Title from "./Title";
 import dynamic from "next/dynamic";
+import React, { forwardRef } from "react";
 
 const DynamicAnimatedBackground = dynamic(
   () => import("../animated_bckground/AnimatedBackgroundSkills"),
@@ -9,9 +10,9 @@ const DynamicAnimatedBackground = dynamic(
   }
 );
 
-const Skills: React.FC = () => {
+const Skills = forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <div className="skills_section">
+    <div className="skills_section" ref={ref}>
       {/* <DynamicAnimatedBackground /> */}
       <div className="skills_container">
         <Title />
@@ -19,6 +20,6 @@ const Skills: React.FC = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Skills;

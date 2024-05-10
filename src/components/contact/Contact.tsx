@@ -1,10 +1,11 @@
 import ContactForm from "./ContactForm";
 import ContactInfoCard from "./ContactInfoCard";
 import Title from "./Title";
+import React, { forwardRef } from "react";
 
-const Contact: React.FC = () => {
+const Contact = forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <div className="contact__section">
+    <div className="contact__section" ref={ref}>
       <Title />
       <div className="contact__content">
         <div className="contact__content_contactInfo">
@@ -17,6 +18,6 @@ const Contact: React.FC = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Contact;

@@ -1,5 +1,6 @@
 import Card from "./Card";
 import Title from "./Title";
+import React, { forwardRef } from "react";
 
 const EducationData = [
   {
@@ -18,9 +19,9 @@ const EducationData = [
   },
 ];
 
-const Education = () => {
+const Education = forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <div className="education_section">
+    <div className="education_section" ref={ref}>
       <Title />
       <div className="education_content">
         {EducationData.map((item) => (
@@ -29,6 +30,6 @@ const Education = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Education;

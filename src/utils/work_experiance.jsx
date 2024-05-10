@@ -23,11 +23,11 @@ export const WorkExperience = [
       "Contributed to all stages of the software development lifecycle, including initial requirement gathering, design, coding, testing, deployment, and maintenance.",
       "Maintained strong relationships with clients by engaging in regular communication to understand their needs, gather feedback, and ensure their satisfaction with the software projects.",
       "Took accountability for backend development, including designing and implementing server-side logic, integrating with frontend elements, and managing data storage solutions.",
-      "Stayed up to date with the latest technologies and industry trends, continuously learning and experimenting with new technologies, and integrating them into the development process when appropriate."
+      "Stayed up to date with the latest technologies and industry trends, continuously learning and experimenting with new technologies, and integrating them into the development process when appropriate.",
     ],
   },
   {
-    title: "Demonstrator",
+    title: "Trainee Software Enginner",
     company: "University of Kelaniya",
     date: "September 2023 - Present",
     responsibilities: [

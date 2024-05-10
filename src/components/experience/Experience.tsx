@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, forwardRef } from "react";
 import Title from "./Title";
 import WorkExperiance from "./WorkExperiance";
 import ExperienceModal from "../modals/ExperienceModal";
@@ -10,7 +10,7 @@ type WorkExperience = {
   responsibilities: string[];
 };
 
-const Experience: React.FC = () => {
+const Experience = forwardRef<HTMLDivElement>((props, ref) => {
   const [open, setOpen] = useState<boolean>(false);
   const [experience, setExperience] = useState<WorkExperience | null>(null);
   const handleOpen = () => setOpen(true);
@@ -20,7 +20,7 @@ const Experience: React.FC = () => {
   };
   return (
     <>
-      <div className="experience_section">
+      <div className="experience_section" ref={ref}>
         <div className="experience_container">
           <Title />
           <WorkExperiance
@@ -36,6 +36,6 @@ const Experience: React.FC = () => {
       />
     </>
   );
-};
+});
 
 export default Experience;

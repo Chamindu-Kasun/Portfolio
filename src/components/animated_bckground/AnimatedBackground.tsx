@@ -23,8 +23,8 @@ const AnimatedBackground: React.FC = () => {
           loop={true}
           muted={true}
           pip={true}
-          width={"100%"}
-          height={"100%"}
+          width={"2000px"}
+          height={"2000px"}
         />
       )}
     </div>

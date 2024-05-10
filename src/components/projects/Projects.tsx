@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, forwardRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import projectImg from "../../../public/assets/eggburn.xyz/eggburn1.png";
@@ -52,7 +52,7 @@ const MyProjects = [
   },
 ];
 
-const Projects: React.FC = () => {
+const Projects = forwardRef<HTMLDivElement>((props, ref) => {
   // const [selectedId, setSelectedId] = useState<number | null>(null);
 
   const [open, setOpen] = useState<boolean>(false);
@@ -65,7 +65,7 @@ const Projects: React.FC = () => {
 
   return (
     <>
-      <div className="projects">
+      <div className="projects" ref={ref}>
         <div className="projects__title">
           MY <span>PORTFOLIO</span>
         </div>
@@ -83,6 +83,6 @@ const Projects: React.FC = () => {
       <ProjectModal project={project} open={open} handleClose={handleClose} />
     </>
   );
-};
+});
 
 export default Projects;
