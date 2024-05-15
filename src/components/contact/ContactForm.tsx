@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { sendEmail } from "@src/services/sendEmail";
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -8,21 +9,56 @@ const ContactForm: React.FC = () => {
     message: "",
   });
 
+  const [errors, setErrors] = useState({
+    firstname: '',
+    lastname: '',
+    email: '',
+    message: '',
+  });
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    setErrors({ ...errors, [name]: '' });
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    try {
-      console.log(formData);
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("An error occurred while sending the email.");
+    if (validateForm()) {
+        try {
+          const response = await sendEmail(formData)
+        } catch (error) {
+          console.error("Error submitting form:", error);
+          alert("An error occurred while sending the email.");
+        }
     }
+  };
+
+  const validateEmail = (email: string) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  };
+
+
+  const validateForm = () => {
+    const newErrors = {
+      firstname: '',
+      lastname: '',
+      email: '',
+      message: '',
+    };
+
+    if (!formData.firstname) newErrors.firstname = 'First name is required';
+    if (!formData.lastname) newErrors.lastname = 'Last name is required';
+    if (!formData.email) newErrors.email = 'Email is required';
+    else if (!validateEmail(formData.email)) newErrors.email = 'Email is not valid';
+    if (!formData.message) newErrors.message = 'Message is required';
+
+    setErrors(newErrors);
+
+    return Object.values(newErrors).every(error => error === '');
   };
 
   return (
@@ -37,6 +73,7 @@ const ContactForm: React.FC = () => {
             value={formData.firstname}
             onChange={handleChange}
           />
+          {errors.firstname && <span className="error">{errors.firstname}</span>}
           <input
             type="text"
             className="name-container_lastname"
@@ -45,6 +82,7 @@ const ContactForm: React.FC = () => {
             value={formData.lastname}
             onChange={handleChange}
           />
+          {errors.lastname && <span className="error">{errors.lastname}</span>}
         </div>
         <input
           type="text"
@@ -53,6 +91,7 @@ const ContactForm: React.FC = () => {
           value={formData.email}
           onChange={handleChange}
         />
+        {errors.email && <span className="error">{errors.email}</span>}
         <textarea
           name="message"
           placeholder="Message"
@@ -60,6 +99,7 @@ const ContactForm: React.FC = () => {
           value={formData.message}
           onChange={handleChange}
         />
+        {errors.message && <span className="error">{errors.message}</span>}
         <button type="submit">SEND</button>
       </form>
     </div>
