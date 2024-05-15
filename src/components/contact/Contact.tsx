@@ -10,11 +10,10 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
       <div className="contact__content">
         <div className="contact__content_contactInfo">
           <ContactInfoCard icon="mail" text="chamindukasun074@gmail.com" />
-          <ContactInfoCard icon="github" text="chamindukasun074@gmail.com" />
+          <ContactInfoCard icon="github" text="Chamindu-Kasun" />
         </div>
-        <div>
-          <ContactForm />
-        </div>
+
+        <ContactForm />
       </div>
     </div>
   );

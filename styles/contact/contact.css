@@ -25,36 +25,32 @@
 .contact__content {
   width: 100%;
   display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-
-
-.contact__content div {
-  flex: 1;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @media (max-width: 700px) {
-  .contact__content div {
-   width: 100%;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
+  .contact__content {
+    flex-direction: column;
   }
 }
+
 .contact__content_contactInfo {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 1rem;
+  width: 25%;
 }
-
 
 @media (max-width: 700px) {
   .contact__content_contactInfo {
-   width: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 }
 
@@ -69,17 +65,13 @@
   padding: 1.5rem;
 }
 
-
-
 @media (max-width: 700px) {
   .contact_details_card {
-    padding: 0.5rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .contact_details_card {
-    padding: 0px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
   }
 }
 
@@ -95,40 +87,57 @@
 }
 
 .contact_details_card p {
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   font-weight: 400;
+  margin: 2px;
+}
+
+.contact_details_card a {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #fff;
+  margin: 2px;
 }
 
 .contact-form-content {
-  width: 100%;
+  width: 70%;
+}
+
+@media (max-width: 700px) {
+  .contact-form-content {
+    width: 100%;
+  }
 }
 
 .contact-form-content form {
   display: flex;
   flex-direction: column;
-  grid-gap: 1.5rem;
   width: 100%;
+  height: 300px;
+  justify-content: space-between;
 }
 
 .name-container {
   display: flex;
-  align-items: center;
-  grid-gap: 1.5rem;
+  gap: 20px;
+}
+
+.name-container input {
+  width: 50%;
 }
 
 @media (max-width: 700px) {
-.name-container_firstname{
-  width: 90%;
-}
-.name-container_lastname{
-  width: 90%;
-}
+  .name-container {
+    flex-direction: column;
+  }
+
+  .name-container input {
+    width: auto;
+  }
 }
 
 .contact-form-content form input,
 .contact-form-content form textarea {
-  flex: 1;
-  /* width: 100%; */
   font-size: 0.9rem;
   color: #fff;
   background: #130f2a;

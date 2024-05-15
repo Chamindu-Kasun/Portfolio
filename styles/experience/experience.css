@@ -34,7 +34,7 @@
 
 .experiance_section_timeline {
   margin: 0 auto;
-  max-width: 750px;
+  max-width: 950px;
   padding: 25px;
   display: grid;
   grid-template-columns: 1fr 3px 1fr;
@@ -164,7 +164,7 @@
   display: flex;
   width: 100%;
   flex-direction: column;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .modal_container_date {

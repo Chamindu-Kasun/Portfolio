@@ -14,20 +14,25 @@ const Card: React.FC<CardProps> = (props) => {
   const { data } = props;
   return (
     <div className="education_card">
-      <div className="education_card_details">
-        <h3>{data?.digree}</h3>
-        <h4>{data?.institute}</h4>
-        <p>{data?.date}</p>
+      <div className="education_card_top">
+        <div className="education_card_details">
+          <h3>{data?.digree}</h3>
+          <h4>{data?.institute}</h4>
+          <p>{data?.date}</p>
+        </div>
+        <div className="education_card_image">
+          <Image
+            src={data?.imageURL}
+            width={80}
+            height={80}
+            alt={`university logo`}
+            className="university_icon"
+            unoptimized
+          />
+        </div>
       </div>
-      <div className="education_card_image">
-        <Image
-          src={data?.imageURL}
-          width={80}
-          height={80}
-          alt={`university logo`}
-          className="university_icon"
-          unoptimized
-        />
+      <div>
+        <button>Subjects learned</button>
       </div>
     </div>
   );

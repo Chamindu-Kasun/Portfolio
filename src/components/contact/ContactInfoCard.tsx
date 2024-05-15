@@ -13,7 +13,17 @@ const ContactInfoCard: React.FC<ContactInfoCardProps> = (props) => {
       <div className="contact_details_card_icon">
         {icon === "mail" ? <MailOutlineIcon /> : <GitHubIcon />}
       </div>
-      <p>{text}</p>
+      {icon === "mail" ? (
+        <p>{text}</p>
+      ) : (
+        <a
+          href={"https://github.com/Chamindu-Kasun"}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {text}
+        </a>
+      )}
     </div>
   );
 };

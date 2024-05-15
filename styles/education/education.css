@@ -30,12 +30,20 @@
   border: 1px solid #6751b9;
   border-radius: 10px;
   width: 300px;
-  height: 200px;
+  height: 250px;
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
   margin-bottom: 2rem;
+}
+
+.education_card_top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .education_card_details h3 {
@@ -58,4 +66,14 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+}
+
+.education_card button {
+  font-size: 0.7rem;
+  font-weight: 400;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  background: linear-gradient(180deg, #aa94fe 0%, #7c5fe6 100%);
+  border: none;
+  border-radius: 0.3rem;
 }
