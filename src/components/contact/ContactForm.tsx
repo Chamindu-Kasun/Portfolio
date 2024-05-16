@@ -10,10 +10,10 @@ const ContactForm: React.FC = () => {
   });
 
   const [errors, setErrors] = useState({
-    firstname: '',
-    lastname: '',
-    email: '',
-    message: '',
+    firstname: "",
+    lastname: "",
+    email: "",
+    message: "",
   });
 
   const handleChange = (
@@ -21,18 +21,18 @@ const ContactForm: React.FC = () => {
   ) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    setErrors({ ...errors, [name]: '' });
+    setErrors({ ...errors, [name]: "" });
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validateForm()) {
-        try {
-          const response = await sendEmail(formData)
-        } catch (error) {
-          console.error("Error submitting form:", error);
-          alert("An error occurred while sending the email.");
-        }
+      try {
+        const response = await sendEmail(formData);
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        alert("An error occurred while sending the email.");
+      }
     }
   };
 
@@ -41,65 +41,76 @@ const ContactForm: React.FC = () => {
     return re.test(email);
   };
 
-
   const validateForm = () => {
     const newErrors = {
-      firstname: '',
-      lastname: '',
-      email: '',
-      message: '',
+      firstname: "",
+      lastname: "",
+      email: "",
+      message: "",
     };
 
-    if (!formData.firstname) newErrors.firstname = 'First name is required';
-    if (!formData.lastname) newErrors.lastname = 'Last name is required';
-    if (!formData.email) newErrors.email = 'Email is required';
-    else if (!validateEmail(formData.email)) newErrors.email = 'Email is not valid';
-    if (!formData.message) newErrors.message = 'Message is required';
+    if (!formData.firstname) newErrors.firstname = "First name is required";
+    if (!formData.lastname) newErrors.lastname = "Last name is required";
+    if (!formData.email) newErrors.email = "Email is required";
+    else if (!validateEmail(formData.email))
+      newErrors.email = "Email is not valid";
+    if (!formData.message) newErrors.message = "Message is required";
 
     setErrors(newErrors);
 
-    return Object.values(newErrors).every(error => error === '');
+    return Object.values(newErrors).every((error) => error === "");
   };
 
   return (
     <div className="contact-form-content">
       <form onSubmit={handleSubmit}>
-        <div className="name-container">
+        <div className="input_field_section">
           <input
             type="text"
-            className="name-container_firstname"
+            className={errors.firstname?"input_error":""}
             name="firstname"
             placeholder="First Name"
             value={formData.firstname}
             onChange={handleChange}
           />
-          {errors.firstname && <span className="error">{errors.firstname}</span>}
+          {errors.firstname && (
+            <span className="error_message">{errors.firstname}</span>
+          )}
+        </div>
+        <div className="input_field_section">
           <input
             type="text"
-            className="name-container_lastname"
+            className={errors.lastname?"input_error":""}
             name="lastname"
             placeholder="Last Name"
             value={formData.lastname}
             onChange={handleChange}
           />
-          {errors.lastname && <span className="error">{errors.lastname}</span>}
+          {errors.lastname && <span className="error_message">{errors.lastname}</span>}
         </div>
-        <input
-          type="text"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-        {errors.email && <span className="error">{errors.email}</span>}
-        <textarea
-          name="message"
-          placeholder="Message"
-          rows={3}
-          value={formData.message}
-          onChange={handleChange}
-        />
-        {errors.message && <span className="error">{errors.message}</span>}
+
+        <div className="input_field_section">
+          <input
+            type="text"
+            name="email"
+            className={errors.email?"input_error":""}
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+          {errors.email && <span className="error_message">{errors.email}</span>}
+        </div>
+        <div className="input_field_section">
+          <textarea
+            name="message"
+            placeholder="Message"
+            className={errors.message?"input_error":""}
+            rows={10}
+            value={formData.message}
+            onChange={handleChange}
+          />
+          {errors.message && <span className="error_message">{errors.message}</span>}
+        </div>
         <button type="submit">SEND</button>
       </form>
     </div>
