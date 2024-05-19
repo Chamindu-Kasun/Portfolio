@@ -27,6 +27,7 @@
     "react-dom": "18.2.0",
     "react-fireworks": "^1.0.4",
     "react-player": "^2.14.1",
+    "react-toastify": "^10.0.5",
     "react-tsparticles": "^2.10.1",
     "tsparticles": "^2.10.1",
     "typescript": "5.1.3"
