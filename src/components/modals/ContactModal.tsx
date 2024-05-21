@@ -4,8 +4,8 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import CloseIcon from "@mui/icons-material/Close";
 import Image from "next/image";
-import projectImg from "../../../public/assets/eggburn.xyz/eggburn1.png";
-
+import greetingImg from "../../../public/assets/images/Greetings.png";
+import tryAgainImg from "../../../public/assets/images/TryAgain.png";
 
 const style = {
   position: "absolute" as "absolute",
@@ -23,13 +23,14 @@ const style = {
 };
 
 type ContactModalProps = {
+  isSendingMailSuceed:boolean;
   responseMsg: string;
   open: boolean;
   handleClose: () => void;
 };
 
 const ContactModal: React.FC<ContactModalProps> = (props) => {
-  const { responseMsg, open, handleClose } = props;
+  const { isSendingMailSuceed,responseMsg, open, handleClose } = props;
 
   return (
     <div>
@@ -54,9 +55,7 @@ const ContactModal: React.FC<ContactModalProps> = (props) => {
             </Box>
             <Box>
                 <Image
-                    src={projectImg}
-                    width={250}
-                    height={300}
+                    src={isSendingMailSuceed?greetingImg:tryAgainImg}            
                     alt={`project logo`}
                     className="project__card_icon"
                     unoptimized

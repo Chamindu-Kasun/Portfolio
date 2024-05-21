@@ -2,18 +2,6 @@ import { useState } from "react";
 import { sendEmail } from "@src/services/sendEmail";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
-import {
-  Alert,
-  Dialog,
-  DialogContent,
-  DialogContentText,
-  DialogActions,
-  Button,
-  Snackbar,
-} from "@mui/material";
-import CheckIcon from "@mui/icons-material/Check";
-import ErrorIcon from "@mui/icons-material/Error";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ContactModal from "../modals/ContactModal";
 
@@ -33,7 +21,7 @@ const ContactForm: React.FC = () => {
   });
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
-
+  const [isSendingMailSuceed, setIsSendingMailSuceed] = useState<boolean>(false)
   const [responseMsg, setRresponseMsg] = useState<string>("")
   const [open, setOpen] = useState<boolean>(false);
   const handleOpen = () => setOpen(true);
@@ -54,7 +42,8 @@ const ContactForm: React.FC = () => {
     if (validateForm()) {
       try {
         setIsLoading(true);
-        // const response = await sendEmail(formData);
+        const response = await sendEmail(formData);
+        setIsSendingMailSuceed(true);
         setRresponseMsg(`Thank you for contacting me ${formData.firstname}. I recieved your email. Will contact you soon`)
         setIsLoading(false);
         handleOpen();
@@ -72,6 +61,7 @@ const ContactForm: React.FC = () => {
         });
       } catch (error) {
         console.error("Error submitting form:", error);
+        setIsSendingMailSuceed(false);
         setRresponseMsg(`${formData.firstname}, Something went wrong while sending email. Please try again later.`)
         handleOpen();
         setFormData({
@@ -195,6 +185,7 @@ const ContactForm: React.FC = () => {
       responseMsg={responseMsg}
       open={open}
       handleClose={handleClose}
+      isSendingMailSuceed={isSendingMailSuceed}
     />
     </>
   );
