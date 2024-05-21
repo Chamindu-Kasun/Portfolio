@@ -15,6 +15,7 @@ import CheckIcon from "@mui/icons-material/Check";
 import ErrorIcon from "@mui/icons-material/Error";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ContactModal from "../modals/ContactModal";
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -33,7 +34,10 @@ const ContactForm: React.FC = () => {
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
+  const [responseMsg, setRresponseMsg] = useState<string>("")
   const [open, setOpen] = useState<boolean>(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -43,44 +47,17 @@ const ContactForm: React.FC = () => {
     setErrors({ ...errors, [name]: "" });
   };
 
-  const showSuccessAlert = () => {
-    toast.success("Success Notification !");
-  };
 
-  const showFailureAlert = () => {
-    return (
-      <Alert icon={<ErrorIcon fontSize="inherit" />} severity="error">
-        Something went wrong. Please try again later.
-      </Alert>
-    );
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validateForm()) {
       try {
-        // setIsLoading(true);
+        setIsLoading(true);
         // const response = await sendEmail(formData);
-        // setFormData({
-        //   firstname: "",
-        //   lastname: "",
-        //   email: "",
-        //   message: "",
-        // });
-        // setErrors({
-        //   firstname: "",
-        //   lastname: "",
-        //   email: "",
-        //   message: "",
-        // });
-        showSuccessAlert();
-        // setIsLoading(false);
-      } catch (error) {
-        console.error("Error submitting form:", error);
+        setRresponseMsg(`Thank you for contacting me ${formData.firstname}. I recieved your email. Will contact you soon`)
+        setIsLoading(false);
+        handleOpen();
         setFormData({
           firstname: "",
           lastname: "",
@@ -93,7 +70,22 @@ const ContactForm: React.FC = () => {
           email: "",
           message: "",
         });
-        showFailureAlert();
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        setRresponseMsg(`${formData.firstname}, Something went wrong while sending email. Please try again later.`)
+        handleOpen();
+        setFormData({
+          firstname: "",
+          lastname: "",
+          email: "",
+          message: "",
+        });
+        setErrors({
+          firstname: "",
+          lastname: "",
+          email: "",
+          message: "",
+        });
       }
     }
   };
@@ -124,6 +116,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
+    <>
     <div className="contact-form-content">
       <form onSubmit={handleSubmit}>
         <div className="input_field_section">
@@ -198,6 +191,12 @@ const ContactForm: React.FC = () => {
         </button>
       </form>
     </div>
+    <ContactModal
+    responseMsg={responseMsg}
+            open={open}
+            handleClose={handleClose}
+    />
+    </>
   );
 };
 
