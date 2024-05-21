@@ -162,3 +162,37 @@
   flex-direction: column;
   gap: 5px;
 }
+
+.modal_container_contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #130f2a;
+  border-radius: 0.65rem;
+  border: 1px solid #6751b9 !important;
+  padding: 1.5rem;
+}
+
+.modal_container_contact_title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.modal_container_contact_content{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  overflow-y: auto;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.modal_container_contact_response{
+  font-size: 1rem !important;
+  font-weight: 400;
+  color: #fff;
+}

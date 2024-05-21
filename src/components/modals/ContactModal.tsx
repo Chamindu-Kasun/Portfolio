@@ -3,6 +3,9 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import CloseIcon from "@mui/icons-material/Close";
+import Image from "next/image";
+import projectImg from "../../../public/assets/eggburn.xyz/eggburn1.png";
+
 
 const style = {
   position: "absolute" as "absolute",
@@ -35,20 +38,29 @@ const ContactModal: React.FC<ContactModalProps> = (props) => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style} className="modal_container_experience">
-          <Box className="modal_container_title">
+        <Box sx={style} className="modal_container_contact">
+          <Box className="modal_container_contact_title">
             <Button onClick={handleClose}>
               <CloseIcon />
             </Button>
           </Box>
-          <Box className="modal_container_description">
+          <Box className="modal_container_contact_content">
             <Box>
               <Typography
-                className="modal_container_date"
-                id="modal-modal-title"
+                className="modal_container_contact_response"
               >
                 {responseMsg}
               </Typography>
+            </Box>
+            <Box>
+                <Image
+                    src={projectImg}
+                    width={250}
+                    height={300}
+                    alt={`project logo`}
+                    className="project__card_icon"
+                    unoptimized
+                /> 
             </Box>
           </Box>
         </Box>

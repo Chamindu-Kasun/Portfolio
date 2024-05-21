@@ -192,9 +192,9 @@ const ContactForm: React.FC = () => {
       </form>
     </div>
     <ContactModal
-    responseMsg={responseMsg}
-            open={open}
-            handleClose={handleClose}
+      responseMsg={responseMsg}
+      open={open}
+      handleClose={handleClose}
     />
     </>
   );
