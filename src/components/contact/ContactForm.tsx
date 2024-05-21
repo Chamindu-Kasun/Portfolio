@@ -13,6 +13,8 @@ import {
 } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
 import ErrorIcon from "@mui/icons-material/Error";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -42,18 +44,7 @@ const ContactForm: React.FC = () => {
   };
 
   const showSuccessAlert = () => {
-    return (
-      <Snackbar autoHideDuration={6000} onClose={handleClose}>
-        <Alert
-          severity="success"
-          icon={<CheckIcon fontSize="inherit" />}
-          sx={{ width: "100%" }}
-        >
-          Thank you for reaching out! I will get back to you as soon as
-          possible.
-        </Alert>
-      </Snackbar>
-    );
+    toast.success("Success Notification !");
   };
 
   const showFailureAlert = () => {
@@ -206,16 +197,6 @@ const ContactForm: React.FC = () => {
           )}
         </button>
       </form>
-      <Dialog open={open} onClose={handleClose}>
-        <DialogContent>
-          <DialogContentText>{showSuccessAlert()}</DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            Close
-          </Button>
-        </DialogActions>
-      </Dialog>
     </div>
   );
 };
