@@ -1,9 +1,5 @@
 "use client";
 import React, { useEffect, useState, forwardRef } from "react";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import projectImg from "../../../public/assets/eggburn.xyz/eggburn1.png";
-import projectImg2 from "../../../public/assets/images/banner-image2.jpg";
 import ProjectCard from "./ProjectCard";
 import ProjectModal from "../modals/ProjectModal";
 
@@ -11,6 +7,7 @@ type Project = {
   title: string;
   link: string;
   points: string[];
+  images: string[];
 };
 
 const MyProjects = [
@@ -31,24 +28,72 @@ const MyProjects = [
       "Got Familiar with Hardhat, a popular development environment for Ethereum smart contracts. Hardhat provides a comprehensive toolset for compiling, deploying, testing, and debugging smart contracts.",
       "Exposure to Avalanche, a blockchain platform known for its high throughput, low latency, and scalability. Learned about Avalanche's consensus mechanism and its compatibility with Ethereum Virtual Machine (EVM) smart contracts.",
     ],
+    images: [
+      "https://storage.googleapis.com/portfolio_ck/eggburn_images/1.jpg",
+      "https://storage.googleapis.com/portfolio_ck/eggburn_images/2.png",
+      "https://storage.googleapis.com/portfolio_ck/eggburn_images/3.jpeg",
+      "https://storage.googleapis.com/portfolio_ck/eggburn_images/4.jpeg",
+      "https://storage.googleapis.com/portfolio_ck/eggburn_images/5.jpeg",
+    ],
   },
   {
     id: 2,
-    title: "chikn_store.xyz",
-    link: "",
-    points: ["React", "Next.js", "Tailwind CSS"],
+    title: "Excel(XLSX) To JSON Converter",
+    link: "https://xlsx-to-json-converter.uc.r.appspot.com",
+    points: [
+      "Developed an online tool for converting large Excel (XLSX) files to JSON format for easier data manipulation and integration.",
+      "Streamlined the process of handling extensive datasets by converting them to JSON, which is more versatile for programming.",
+      "Implemented the application using Node.js.",
+      "Utilized Google Cloud Platform (GCP) for hosting.",
+      "Incorporated error handling and validation to ensure data integrity during the conversion process.",
+      "Designed a user-friendly interface for seamless interaction and conversion of files.",
+      "Used Express.js for the server-side framework to handle HTTP requests and routing.",
+    ],
+    images: [
+      "https://storage.googleapis.com/portfolio_ck/XLSX%20to%20JSON%20converter/2.png",
+      "https://storage.googleapis.com/portfolio_ck/XLSX%20to%20JSON%20converter/4.png",
+      "https://storage.googleapis.com/portfolio_ck/XLSX%20to%20JSON%20converter/3.png",
+      "https://storage.googleapis.com/portfolio_ck/XLSX%20to%20JSON%20converter/1.png",
+    ],
   },
   {
     id: 3,
-    title: "NFT Marketplace",
-    link: "",
-    points: ["React", "Next.js", "Tailwind CSS"],
+    title: "NFT Metadata Service",
+    link: "https://github.com/Chamindu-Kasun/NFT_MetaDataService-Avalanche_Blockchain",
+    points: [
+      "Developed a backend service to retrieve metadata of NFTs on the Avalanche blockchain.",
+      "Provides a streamlined solution for obtaining NFT metadata, similar to established providers like Moralis.",
+      "Utilizes the ethers library to interact with Ethereum smart contracts.",
+      "Ensures compatibility with various NFT contracts by using the ERC721 standard.",
+      "Implemented the tokenURI function to retrieve the URI associated with specific tokens, following the ERC721 standard.",
+      "Enabled interaction with various NFT contracts using a common ABI, eliminating the need for specific ABIs for each contract.",
+      "Ensured efficient data retrieval and processing for NFT metadata.",
+    ],
+    images: [
+      "https://storage.googleapis.com/portfolio_ck/NFT%20Metadata%20Service/1.jpg",
+      "https://storage.googleapis.com/portfolio_ck/NFT%20Metadata%20Service/2.png",
+      "https://storage.googleapis.com/portfolio_ck/NFT%20Metadata%20Service/3.jpeg",
+      "https://storage.googleapis.com/portfolio_ck/NFT%20Metadata%20Service/4.jpeg",
+      "https://storage.googleapis.com/portfolio_ck/NFT%20Metadata%20Service/5.png",
+    ],
   },
   {
     id: 4,
-    title: "AWESOMEFIGHT",
-    link: "",
-    points: ["React", "Next.js", "Tailwind CSS"],
+    title: "SCSE Conference Website",
+    link: "https://conf.kln.ac.lk/scse/index.php",
+    points: [
+      "Worked as a developer for the Smart Computing and Systems Engineering (SCSE) conference.",
+      "Developed the platform using Joomla, ensuring a robust and user-friendly website.",
+      "Gained a strong understanding of content management systems (CMS) such as Joomla and WordPress.",
+      "Gained exposure to low-code and no-code solutions, enhancing rapid development skills."
+    ],
+    images: [
+      "https://storage.googleapis.com/portfolio_ck/SCSE/1.png",
+      "https://storage.googleapis.com/portfolio_ck/SCSE/2.png",
+      "https://storage.googleapis.com/portfolio_ck/SCSE/3.png",
+      "https://storage.googleapis.com/portfolio_ck/SCSE/4.png",
+      "https://storage.googleapis.com/portfolio_ck/SCSE/5.png",
+    ],
   },
 ];
 

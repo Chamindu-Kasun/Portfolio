@@ -41,7 +41,12 @@
   width: 70%;
 }
 
-
+@media (max-width: 700px) {
+  .contact__content_contactInfo {
+    width: 100%;
+    gap:10px
+  }
+}
 
 .contact_details_card {
   display: flex;
@@ -57,7 +62,7 @@
 
 @media (max-width: 700px) {
   .contact_details_card {
-    width: 100%;
+    width: 100%
   }
 }
 
