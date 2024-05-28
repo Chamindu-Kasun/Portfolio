@@ -98,8 +98,6 @@ const MyProjects = [
 ];
 
 const Projects = forwardRef<HTMLDivElement>((props, ref) => {
-  // const [selectedId, setSelectedId] = useState<number | null>(null);
-
   const [open, setOpen] = useState<boolean>(false);
   const [project, setProject] = useState<Project | null>(null);
   const handleOpen = () => setOpen(true);
