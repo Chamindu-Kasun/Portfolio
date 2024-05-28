@@ -38,13 +38,7 @@
   margin-bottom: 2rem;
 }
 
-.education_card_top {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
+
 
 .education_card_details h3 {
   font-size: 0.8rem;
@@ -76,4 +70,8 @@
   background: linear-gradient(180deg, #aa94fe 0%, #7c5fe6 100%);
   border: none;
   border-radius: 0.3rem;
+}
+
+.university_icon{
+  border-radius: 50%;
 }

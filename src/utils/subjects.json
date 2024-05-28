@@ -3,6 +3,7 @@
     "degree": "B.Sc. (Hons) in Management and Information Technology",
     "university": "University of Kelaniya, Sri Lanka",
     "from_to": "2019 - 2023",
+    "imageURL": "https://storage.googleapis.com/portfolio_ck/Kelaniya.png",
     "subjects": [
       {
         "Level 1": [
@@ -69,6 +70,7 @@
     "degree": "M.Sc. in Computer Science (Reading)",
     "university": "University of Colombo, Sri Lanka",
     "from_to": "2024 - 2026",
+    "imageURL": "https://storage.googleapis.com/portfolio_ck/UCSC.jpg",
     "subjects": [
       {
         "Semester I": [
