@@ -75,3 +75,20 @@
 .university_icon{
   border-radius: 50%;
 }
+
+.modal_container_education {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #130f2a;
+  border-radius: 0.65rem;
+  border: 1px solid #6751b9 !important;
+  padding: 1.5rem;
+}
+
+.modal_container_edu_close{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
+}

@@ -42,7 +42,7 @@ const Education = forwardRef<HTMLDivElement>((props, ref) => {
           ))}
         </div>
       </div>
-    
+    <EducationModal open={open} subjects={subjects} handleClose={handleClose} />
     </>
   );
 });
