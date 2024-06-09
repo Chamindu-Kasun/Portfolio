@@ -24,7 +24,7 @@ type EducationModalProps = {
 
 const EducationModal: React.FC<EducationModalProps> = (props) => {
   const { open, subjects, handleClose } = props;
-  console.log(subjects);
+
   return (
     <div>
       <Modal
@@ -38,12 +38,24 @@ const EducationModal: React.FC<EducationModalProps> = (props) => {
               <CloseIcon />
             </Button>
           </Box>
-          <h1>Works</h1>
-          {/* <ul>
-            {subjects.map((subject, index) => (
-              <li>{subject}</li>
-            ))}
-          </ul> */}
+          <Box className="modal_container_description_edu">
+          <h1>Education Levels and Subjects</h1>
+
+          {subjects.map((levelObject, levelIndex) => {
+            const levelName:any = Object.keys(levelObject)[0];
+            const levelSubjects:any = levelObject[levelName];
+            return (
+              <Box key={levelIndex} className="edu_subjects">
+                <h2>{levelName}</h2>
+                <ul>
+                  {levelSubjects.map((subject:any, subjectIndex:any) => (
+                    <li key={subjectIndex}>{subject}</li>
+                  ))}
+                </ul>
+              </Box>
+            );
+          })}
+</Box>
         </Box>
       </Modal>
     </div>

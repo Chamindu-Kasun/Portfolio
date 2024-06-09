@@ -31,7 +31,7 @@ const Education = forwardRef<HTMLDivElement>((props, ref) => {
     fetchData();
   }, []);
 
-  console.log(subjects);
+
   return (
     <>
       <div className="education_section" ref={ref}>

@@ -92,3 +92,33 @@
   width: 100%;
   justify-content: flex-end;
 }
+
+.modal_container_description_edu {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 5px;
+  align-items: center;
+}
+
+.modal_container_description_edu::-webkit-scrollbar {
+  width: 8px; 
+}
+
+.modal_container_description_edu::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+.modal_container_description_edu::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 10px; 
+}
+
+.modal_container_description_edu::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.edu_subjects{
+  width: 90%;
+}
